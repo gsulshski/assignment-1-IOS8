@@ -1,5 +1,5 @@
 //
-//  ViewController.m 
+//  ViewController.m  
 //  Matchismo
 //
 //  Created by Gregory Ulsh on 7/26/14.
@@ -39,7 +39,9 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
+    // changed from int to float
+    
+    float chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
 
@@ -49,7 +51,9 @@
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
-        int cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
+        //changed int to float
+        
+        float cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
